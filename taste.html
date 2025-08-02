@@ -11,20 +11,29 @@
       <h1 class="mb-4">🧂 Chips Beoordeling</h1>
       <form id="tasteForm">
         <div class="mb-3">
-          <label for="chipCode" class="form-label">Chips code (bijv. A, B, C)</label>
-          <input type="text" id="chipCode" class="form-control" required>
+          <label for="chipSelect" class="form-label">Kies chips</label>
+          <select id="chipSelect" class="form-control" required>
+            <option value="">Selecteer chips...</option>
+          </select>
         </div>
         <div class="mb-3">
-          <label for="flavor" class="form-label">Smaak (1-10)</label>
-          <input type="number" id="flavor" class="form-control" min="1" max="10" required>
+          <label for="flavor" class="form-label">Smaak (1-10):
+            <span id="flavorValue">5</span>
+          </label>
+          <input type="range" id="flavor" class="form-range" min="1" max="10" value="5" required>
         </div>
         <div class="mb-3">
-          <label for="crunch" class="form-label">Crunch (1-10)</label>
-          <input type="number" id="crunch" class="form-control" min="1" max="10" required>
+          <label for="crunch" class="form-label">Crunch (1-10):
+            <span id="crunchValue">5</span>
+          </label>
+          <input type="range" id="crunch" class="form-range" min="1" max="10" value="5" required>
         </div>
         <div class="mb-3">
-          <label for="salt" class="form-label">Zoutgehalte (1-10)</label>
-          <input type="number" id="salt" class="form-control" min="1" max="10" required>
+          <label for="salt" class="form-label">Zoutgehalte (1-10):           
+            <span id="saltValue">5</span>  
+          </label>
+          <input type="range" id="salt" class="form-range" min="1" max="10" value="5" required>
+
         </div>
         <button type="submit" class="btn btn-success">Verstuur score ✅</button>
       </form>
@@ -34,6 +43,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="taste.js"></script>
 </body>
 </html>
