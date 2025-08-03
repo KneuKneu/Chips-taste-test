@@ -102,26 +102,16 @@ chipsResult.forEach((chip) => {
     // Reset all other buttons to default style
     chipsResult.forEach((otherChip) => {
       if (otherChip.name !== chip.name) {
-      document.getElementById(`chip-${otherChip.name}`).className =
-        defaultButtonClass;
+        document.getElementById(`chip-${otherChip.name}`).className =
+          defaultButtonClass;
       }
     });
-
-    // Refresh chip reference from localStorage in case it was updated
-    const updatedChipsResult = JSON.parse(localStorage.getItem("ChipsResult")) || [];
-    const updatedChip = updatedChipsResult.find(c => c.name === chip.name);
-
-    const flavor = typeof updatedChip?.flavor === "number" ? updatedChip.flavor : 5;
-    const crunch = typeof updatedChip?.crunch === "number" ? updatedChip.crunch : 5;
-    const salt = typeof updatedChip?.salt === "number" ? updatedChip.salt : 5;
     //set values for chip.name from chipsResult
-    const flavor = typeof chip.flavor === "number" ? chip.flavor : 5;
-    const crunch = typeof chip.crunch === "number" ? chip.crunch : 5;
-    const salt = typeof chip.salt === "number" ? chip.salt : 5;
-    console.log(`Selected chips: ${flavor}, ${crunch}, ${salt}`);
-    document.getElementById("flavor").value = flavor;
-    document.getElementById("crunch").value = crunch;
-    document.getElementById("salt").value = salt;
+    console.log(`Selected chips: ${chip.flavor}, ${chip.crunch}, ${chip.salt}`);
+    document.getElementById("flavor").value = chip.flavor || 5;
+    document.getElementById("crunch").value = chip.crunch || 5;
+    document.getElementById("salt").value = chip.salt || 5;
+        console.log(`Selected chips: ${chip.flavor}, ${chip.crunch}, ${chip.salt}`);
 
   });
   chipsButtonDiv.appendChild(button);
